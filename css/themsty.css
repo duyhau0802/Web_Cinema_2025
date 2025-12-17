@@ -1,0 +1,78 @@
+.them{
+    float: left;
+    margin-left: 80px;
+    margin-top: 80px;
+    height: 450px;
+    width: 8%;
+}
+.ipngay{
+    float: left;
+    margin-left: 60px;
+    color: rgb(238, 228, 228);
+    background-color: black;
+    margin-top: 15px;
+}
+.khungngay{
+    width: 110px;
+    float: left;
+    margin-top: 0px;
+    margin-left: -220px ;
+}
+.phong{
+    float: left;
+    margin-left: 280px;
+    margin-top: 70px;
+
+}
+.chongio{
+
+    float: left;
+    margin-top: -105px;
+    margin-left:240px;
+    width: 100px;
+}
+.omot{
+    width: 40px;
+
+}
+.ohai{
+    width: 40px;
+}
+
+.ipgio{
+    margin-top:14px ;
+    background-color:rgb(32, 32, 29); 
+    border-color:rgb(25, 24, 24); 
+    color:rgb(240, 231, 231)
+}
+.dien{
+  margin-top: -95px;
+   margin-left: 120px;
+}
+.rep{
+    background-color:rgb(32, 32, 29); 
+    border-color:rgb(25, 24, 24);
+    color:rgb(240, 231, 231);
+    float: left;
+    margin-left: -15px;
+}
+.ipphong{
+    margin-left:  -158px; 
+    margin-top: 37px;
+}
+
+
+@media screen and (max-width: 800px) {
+    .them {
+      width: 100%;
+       /* The width is 100%, when the viewport is 800px or smaller */
+        float: left;
+        margin-left: 10%;
+        margin-top: 50px;
+        height:550px;
+        width: 800px;
+    
+    }
+  }
+
+
