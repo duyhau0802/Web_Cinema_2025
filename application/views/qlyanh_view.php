@@ -87,8 +87,9 @@
                   <input type="file" name="image3" id="anh" />
                   <input type="hidden" name="image3cu" value="<?= $value['image3'] ?>">
                   <pre></pre>
-                  <input type="file" name="image2" id="anh" />
-                  <input type="hidden" name="image2cu" value="<?= $value['image2'] ?>">
+                  <div class="movie__images">
+                                <img alt='' src="<?php echo $value['image3'] ?>">
+                    </div>
                   <pre></pre>
 
                   <input type="file" name="image4" id="anh" />
@@ -110,7 +111,7 @@
                                 <img alt='' src="<?php echo $value['imgtra1'] ?>">
                     </div>
                   <pre></pre>
-                  <input type="text" name="trailer1" value="<?= $value['trailer2'] ?> " id="anh"  />
+                  <input type="text" name="trailer1" value="<?= $value['trailer1'] ?> " id="anh"  />
                   <pre></pre>
                   <b>Ảnh bìa và link trailer2</b>
                   <pre></pre>
