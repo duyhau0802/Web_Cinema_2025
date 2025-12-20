@@ -2,19 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>quản lý danh mục </title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý lịch chiếu phim</title>
 
-    <link rel="stylesheet" href="<?php echo base_url() ?>vendor/bootstrap.css">
-    <link rel="stylesheet" href="<?php echo base_url() ?>vendor/font-awesome.css">
-
-    <!-- Fonts -->
-    <!-- Font awesome - icon font -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <!-- Roboto -->
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
-
-
-
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- jQuery (required for Bootstrap) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            padding: 20px;
+        }
+        .hidden-xs-up {
+            display: none !important;
+        }
+        .jumbotron {
+            background-color: #f8f9fa;
+            padding: 2rem 1rem;
+            margin-bottom: 2rem;
+            border-radius: 0.3rem;
+        }
+        .card {
+            margin-bottom: 1rem;
+        }
+        .btn {
+            margin: 0 2px;
+        }
+    </style>
 </head>
 <body>
     <div class="container-fluid">
@@ -97,13 +122,17 @@
             </div>
         </div>
 
-        <script type="text/javascript" src="<?php echo base_url() ?>vendor/bootstrap.js"></script>
-        <script type="text/javascript" src="<?php echo base_url() ?>1.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script> 
-        <script type="text/javascript" src="http://www.datejs.com/build/date.js"></script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <!-- Bootstrap JS Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        
+        <!-- DateJS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/datejs/1.0/date.min.js"></script>
 
         <script>
+        // Ensure jQuery is available
+        if (typeof jQuery == 'undefined') {
+            document.write('<script src="https://code.jquery.com/jquery-3.6.0.min.js"><\/script>');
+        }
 
 
             $(function(){
@@ -268,7 +297,7 @@
 
                 
                 
-            })
+            });
         </script>
     </body>
-    </html>
+</html>
