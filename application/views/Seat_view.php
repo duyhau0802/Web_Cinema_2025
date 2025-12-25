@@ -37,14 +37,18 @@
 
    <body>
     <div class="wrapper place-wrapper">
-        <!-- Banner -->
-           <div class="banner-top">
-        <img alt='top banner' src="<?php echo base_url(); ?>images/banner.png" style="height:90px; width:1600px">
-    </div>
- <?php require('header_view.php') ?>
+        <?php require('header_view.php') ?>
 
  
 
+<!-- Hiển thị thông báo lỗi nếu có -->
+<?php if ($this->session->flashdata('error_msg')): ?>
+    <div class="container" style="margin-top: 20px; margin-bottom: 20px;">
+        <div class="alert alert-danger" style="background-color: #f8d7da; color: #721c24; padding: 15px; border: 1px solid #f5c6cb; border-radius: 4px;">
+            <i class="fa fa-exclamation-circle"></i> <?php echo $this->session->flashdata('error_msg'); ?>
+        </div>
+    </div>
+<?php endif; ?>
 
 <!-- Main content -->
 <?php foreach ($dulieulichtucontroller as $valuelich): ?>
@@ -177,8 +181,8 @@
                             <span class="sits__place sits-price--cheap" data-place='D4' data-price='10'>D4</span>
                             <span class="sits__place sits-price--cheap" data-place='D5' data-price='10'>D5</span>
                             <span class="sits__place sits-price--cheap" data-place='D6' data-price='10'>D6</span>
-                            <span class="sits__place sits-price--cheap sits-state--not" data-place='D7' data-price='10'>D7</span>
-                            <span class="sits__place sits-price--cheap sits-state--not" data-place='D8' data-price='10'>D8</span>
+                            <span class="sits__place sits-price--cheap" data-place='D7' data-price='10'>D7</span>
+                            <span class="sits__place sits-price--cheap" data-place='D8' data-price='10'>D8</span>
                             <span class="sits__place sits-price--cheap" data-place='D9' data-price='10'>D9</span>
                             <span class="sits__place sits-price--cheap" data-place='D10' data-price='10'>D10</span>
                             <span class="sits__place sits-price--cheap" data-place='D11' data-price='10'>D11</span>
@@ -433,7 +437,7 @@
                 </div>
                 <div class="col-xs-12 col-md-6">
                     <div class="footer-info">
-                        <p class="heading-special--small">YOUNET MEDIA<br><span class="title-edition">in the social media</span></p>
+                        <p class="heading-special--small">V-STAR MEDIA<br><span class="title-edition">in the social media</span></p>
 
                         <div class="social">
                             <a href='https://www.facebook.com/vku.udn.vn' class="social__variant fa fa-facebook"></a>
@@ -516,9 +520,19 @@
     <script src="<?php echo base_url(); ?>js/custom.js"></script>
     <script type='text/javascript'>
         $(document).ready(function() {
-            var ghedaban = $('.ghedaban').val();
+            //var ghedaban = $('.ghedaban').val();
             // // console.log($ghedaban);
-            var ghedabanmang = ghedaban.split(', ');
+            //var ghedabanmang = ghedaban.split(', ');
+            var ghedaban = $('.ghedaban').val() || '';
+            // Normalize into an array without extra spaces
+            var ghedabanmang = [];
+            if (ghedaban.length) {
+                var parts = ghedaban.split(',');
+                for (var j = 0; j < parts.length; j++) {
+                    var part = parts[j].trim();
+                    if (part) ghedabanmang.push(part);
+                }
+            }
             for (var i = ghedabanmang.length - 1; i >= 0; i--) {
                 // $('.').attr('data-place')=ghedabanmang[i];
                $('span[data-place="'+ghedabanmang[i]+'"]').addClass('sits-state--not');
